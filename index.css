@@ -1,0 +1,382 @@
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(30, 41, 59);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', sans-serif;
+}
+header{
+    background-color: rgb(15, 23, 42);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
+
+}
+
+ul li a {
+    text-decoration: none;
+    color: rgb(226, 232, 240);
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+ul li a:hover {
+    border-bottom: 2px solid rgb(125, 187, 232);
+}
+
+ul li a.active {
+    border-bottom: 2px solid rgb(125, 187, 232);
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 125px;
+    min-height: calc(100vh - 80px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    animation: fadeUp 0.8s ease both;
+}
+
+.hero-greeting {
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(203, 213, 225);
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+    animation: fadeUp 0.8s ease 0.05s both;
+}
+
+.hero-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: rgb(226, 232, 240);
+    line-height: 1.15;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+    animation: fadeUp 0.8s ease 0.12s both;
+}
+
+.hero-desc {
+    color: rgb(148, 163, 184);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 44px;
+    animation: fadeUp 0.8s ease 0.22s both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.32s both;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 13px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.btn-outline {
+    color: rgb(226, 232, 240);
+    border: 1.5px solid rgba(226, 232, 240, 0.5);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: rgb(226, 232, 240);
+    background: rgba(226, 232, 240, 0.06);
+}
+
+.btn-filled {
+    color: rgb(226, 232, 240);
+    /* background: rgb(226, 232, 240); */
+    border: 1.5px solid rgba(226, 232, 240, 0.5);
+    background: transparent;
+}
+
+.btn-filled:hover {
+    border-color: rgb(226, 232, 240);
+    background: rgba(226, 232, 240, 0.06);
+    /* transform: translateX(4px); */
+}
+
+.section-tentang {
+    margin: 60px 125px 40px 125px;
+}
+
+.section-tentang hr {
+    border: none;
+    border-top: 1px solid rgba(226,232,240,0.2);
+    margin-bottom: 40px;
+}
+
+.section-tentang h2 {
+    color: rgb(226, 232, 240);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.tentang-grid {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.tentang-grid > div {
+    flex: 1;
+    min-width: 220px;
+}
+
+.tentang-grid p {
+    color: rgb(203, 213, 225);
+    line-height: 1.8;
+    margin-bottom: 1px;
+}
+
+.tentang-grid h3 {
+    color: rgb(226, 232, 240);
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(226,232,240,0.2);
+    padding-bottom: 8px;
+}
+
+.tentang-grid .edu-tahun {
+    color: rgb(148, 163, 184);
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.tentang-grid .edu-nama {
+    color: rgb(226, 232, 240);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.edu-card {
+    border: 1px solid rgba(226, 232, 240, 0.1);
+    border-radius: 10px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edu-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: rgb(148, 163, 184);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.edu-card .edu-nama {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: rgb(125, 187, 232);
+    margin-bottom: 2px;
+}
+
+.edu-card .edu-tahun {
+    font-size: 0.9rem;
+    color: rgb(148, 163, 184);
+}
+
+.section-keahlian {
+    margin: 0 125px 40px 125px;
+}
+
+.section-keahlian hr {
+    border: none;
+    border-top: 1px solid rgba(226, 232, 240, 0.2);
+    margin-bottom: 40px;
+}
+
+.section-keahlian h2 {
+    color: rgb(226, 232, 240); 
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.section-keahlian > div {
+    flex: 1;
+    min-width: 280px;
+}
+
+.section-keahlian > div p {
+    color: rgb(203, 213, 225);
+    line-height: 1.8;
+    margin-bottom: 1px;
+}
+
+.section-keahlian > div p:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer {
+    background-color: rgb(15, 23, 42);
+    border-top: 1px solid rgba(226, 232, 240, 0.12);
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 32px 125px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-brand {
+    color: rgb(125, 187, 232);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer-nav a:hover {
+    color: rgb(125, 187, 232);
+}
+
+.footer-copy {
+    color: rgb(148, 163, 184);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.profile-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 80px 125px;
+}
+ 
+.profile-card {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1100px;
+    animation: fadeUp 0.8s ease both;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+    width: 220px;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(226, 232, 240, 0.12);
+    background-color: rgb(15, 23, 42);
+}
+ 
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 4px;
+}
+ 
+.profile-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: rgb(125, 187, 232);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+}
+ 
+.profile-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: rgb(226, 232, 240);
+    line-height: 1.1;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+}
+ 
+.profile-bio {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.97rem;
+    color: rgb(148, 163, 184);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
